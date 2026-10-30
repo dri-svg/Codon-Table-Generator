@@ -1,24 +1,20 @@
 # Codon-Table-Generator
 Python program for DNA and RNA codon translation using the standard genetic code.
 
-## Project Overview
+## Introduction
 
-The Codon Table Generator is a Python-based bioinformatics application designed to translate DNA and RNA nucleotide sequences into their corresponding amino acid sequences using the standard genetic code.
+The Codon Table Generator is a Python-based bioinformatics program developed to translate DNA and RNA nucleotide sequences into their corresponding amino acid sequences using the standard genetic code. A codon is a sequence of three nucleotides that specifies an amino acid or a termination signal during protein synthesis.
 
-A codon is a sequence of three nucleotides that specifies an amino acid or a translation termination signal during protein synthesis.
-
-This project demonstrates the application of Python programming and basic bioinformatics concepts in genetic code analysis.
+The project demonstrates the use of Python programming in basic bioinformatics applications, particularly genetic code analysis and sequence translation.
 
 ## Objectives
 
-- Develop a dictionary containing all 64 possible codons.
-- Accept DNA and RNA sequence input.
-- Validate nucleotide sequences.
-- Divide sequences into triplets (codons).
-- Translate codons into their corresponding amino acids.
-- Identify start and stop codons.
-- Handle incomplete codons.
-- Verify the implementation using automated tests.
+Construction of a standard genetic code dictionary containing 64 codons.
+DNA and RNA sequence translation.
+Identification of start and stop codons.
+Detection of invalid and incomplete sequences.
+Calculation of GC content.
+Verification of codon assignments using NCBI and automated testing.
 
 ## Features
 
@@ -32,7 +28,7 @@ This project demonstrates the application of Python programming and basic bioinf
 8. Incomplete Codon Handling: Detects leftover nucleotides that cannot form a complete triplet.
 9. Tabular Output:Displays codon positions, codons, amino acids and start/stop status.
 
-## Technologies Used
+## Tools Used
 
 - Programming language: Python
 - Modules: itertools, unittest

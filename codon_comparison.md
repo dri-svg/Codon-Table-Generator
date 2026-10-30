@@ -6,10 +6,10 @@ The objective of this comparison is to verify whether the codon-to-amino acid as
 
 ## 2. Reference Database
 
-- **Database:** NCBI (National Center for Biotechnology Information)
-- **Reference:** Standard Genetic Code
-- **Translation table:** Table 1
-- **Reference link:** https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
+- Database: NCBI (National Center for Biotechnology Information)
+- Reference: Standard Genetic Code
+- Translation table: Table 1
+- Reference link: https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
 
 The NCBI Standard Genetic Code describes how nucleotide triplets (codons) correspond to amino acids during protein synthesis.
 

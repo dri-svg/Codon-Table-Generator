@@ -166,4 +166,13 @@ def display_codon_table():
 if __name__ == "__main__":
     generate_codon_table()
     display_codon_table()
+
     translate_sequence()
+
+    sequence = input("\nEnter a DNA sequence to calculate GC content: ")
+
+    try:
+        gc_content = calculate_gc_content(sequence)
+        print(f"GC content: {gc_content:.2f}%")
+    except ValueError as error:
+        print("Error:", error)

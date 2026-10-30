@@ -197,6 +197,25 @@ class TestCodonGenerator(unittest.TestCase):
         result = codon_generator.calculate_gc_content("ATGGCTTTTTAA")
         self.assertAlmostEqual(result, 25.0)
       
+    # Test 14: Check sequence with 100% GC content
+    def test_gc_content_all_gc(self):
+        result = codon_generator.calculate_gc_content("GGCC")
+        self.assertEqual(result, 100.0)
+
+    # Test 15: Check sequence with 0% GC content
+    def test_gc_content_all_at(self):
+        result = codon_generator.calculate_gc_content("AATT")
+        self.assertEqual(result, 0.0)
+
+    # Test 16: Reject invalid DNA sequence for GC calculation
+    def test_gc_content_invalid_sequence(self):
+        with self.assertRaises(ValueError):
+            codon_generator.calculate_gc_content("ATGX")
+
+    # Test 17: Reject empty sequence for GC calculation
+    def test_gc_content_empty_sequence(self):
+        with self.assertRaises(ValueError):
+            codon_generator.calculate_gc_content("")
 
 if __name__ == "__main__":
     unittest.main()
