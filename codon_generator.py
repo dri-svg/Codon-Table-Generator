@@ -135,6 +135,24 @@ def translate_sequence():
     else:
         print("Incomplete codon at end: None")
 
+ 
+def calculate_gc_content(sequence):
+    """Calculate the GC content percentage of a DNA sequence."""
+
+    sequence = sequence.upper().replace(" ", "")
+
+    if not sequence:
+        raise ValueError("Sequence cannot be empty.")
+
+    if any(base not in "ATGC" for base in sequence):
+        raise ValueError("Invalid DNA sequence. Use only A, T, G and C.")
+
+    gc_count = sequence.count("G") + sequence.count("C")
+
+    gc_percentage = (gc_count / len(sequence)) * 100
+
+    return gc_percentage
+       
 
 def display_codon_table():
     """Display all 64 codons in the dictionary."""

@@ -22,14 +22,15 @@ This project demonstrates the application of Python programming and basic bioinf
 
 ## Features
 
-1. **Complete Genetic Code:** Includes all 64 standard DNA codons.
-2. **DNA Translation:** Converts DNA codons into amino acids.
-3. **RNA Support:** Accepts RNA sequences by converting uracil (U) into thymine (T) internally.
-4. **Sequence Validation:** Detects invalid nucleotide characters.
-5. **Start Codon Identification:** Identifies ATG.
-6. **Stop Codon Identification:** Identifies TAA, TAG and TGA.
-7. **Incomplete Codon Handling:** Detects leftover nucleotides that cannot form a complete triplet.
-8. **Tabular Output:** Displays codon positions, codons, amino acids and start/stop status.
+1. Complete Genetic Code: Includes all 64 standard DNA codons.
+2. DNA Translation: Converts DNA codons into amino acids.
+3. RNA Support: Accepts RNA sequences by converting uracil (U) into thymine (T) internally.
+4. Sequence Validation: Detects invalid nucleotide characters.
+5. Start Codon Identification: Identifies ATG.
+6. Stop Codon Identification: Identifies TAA, TAG and TGA.
+7. GC content calculation: Calculates the percentage of guanine (G) and cytosine (C) in a DNA sequence.
+8. Incomplete Codon Handling: Detects leftover nucleotides that cannot form a complete triplet.
+9. Tabular Output:Displays codon positions, codons, amino acids and start/stop status.
 
 ## Technologies Used
 

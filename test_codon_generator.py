@@ -191,6 +191,12 @@ class TestCodonGenerator(unittest.TestCase):
             codon_generator.CODON_TABLE,
             expected_table
         ) 
+  
+    # Test 13: Verify GC content calculation
+    def test_gc_content(self):
+        result = codon_generator.calculate_gc_content("ATGGCTTTTTAA")
+        self.assertAlmostEqual(result, 25.0)
+      
 
 if __name__ == "__main__":
     unittest.main()
