@@ -91,5 +91,62 @@ class TestCodonGenerator(unittest.TestCase):
         self.assertIn("Error: Use only A, T, G, C", output.getvalue())
 
 
+    # Test 8: Empty sequence handling
+    def test_empty_sequence(self):
+        output = StringIO()
+
+        with patch("builtins.input", return_value=""):
+            with redirect_stdout(output):
+                codon_generator.translate_sequence()
+
+        self.assertIn("Sequence cannot be empty", output.getvalue())
+
+    # Test 9: Sequence containing only incomplete codon
+    def test_only_incomplete_codon(self):
+        output = StringIO()
+
+        with patch("builtins.input", return_value="AT"):
+            with redirect_stdout(output):
+                codon_generator.translate_sequence()
+
+        result = output.getvalue()
+
+        self.assertIn("No complete codons", result)
+        self.assertIn("Incomplete codon: AT", result)
+
+    # Test 10: Sequence containing spaces
+    def test_sequence_with_spaces(self):
+        output = StringIO()
+
+        with patch("builtins.input", return_value="ATG GCT"):
+            with redirect_stdout(output):
+                codon_generator.translate_sequence()
+
+        result = output.getvalue()
+
+        self.assertIn("Methionine", result)
+        self.assertIn("Alanine", result)
+
+    # Test 11: Verify representative codon assignments
+    def test_amino_acid_assignments(self):
+        expected = {
+            "ATG": "Methionine",
+            "GCT": "Alanine",
+            "TTT": "Phenylalanine",
+            "TGG": "Tryptophan",
+            "AAA": "Lysine",
+            "TAA": "Stop",
+            "TAG": "Stop",
+            "TGA": "Stop"
+        }
+
+        for codon, amino_acid in expected.items():
+            with self.subTest(codon=codon):
+                self.assertEqual(
+                    codon_generator.CODON_TABLE[codon],
+                    amino_acid
+                )
+
+
 if __name__ == "__main__":
     unittest.main()
